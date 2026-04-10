@@ -1,0 +1,6 @@
+ADVANCE_DATA_split/
+project/
+Retrieval/
+**/__pycache__/
+audioset_tagging_cnn/
+*.pth
