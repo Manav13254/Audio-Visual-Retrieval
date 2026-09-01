@@ -1,3 +1,13 @@
+import torch
+import torch.nn.functional as F
+from torch.utils.data import DataLoader
+import numpy as np
+from tqdm import tqdm
+from sklearn.metrics.pairwise import cosine_similarity
+
+from datasets import ValVisionDataset, ValAudioDataset, vision_transform
+
+
 def compute_metrics(model, v_dir, a_dir, device, k_values=[1, 5, 10], batch_size=64):
     model.eval()
     v_ds = ValVisionDataset(v_dir, transform=vision_transform)

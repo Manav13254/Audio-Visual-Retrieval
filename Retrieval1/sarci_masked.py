@@ -259,7 +259,7 @@ def main():
                 save_reconstruction_sample(img_anc, masked_img_anc, recon_anc, epoch + 1)
             
         print("Running evaluation...")
-        i2a, a2i = compute_metrics(model, VAL_V, VAL_A, DEVICE, batch_size=128)
+        i2a, a2i = compute_metrics(model, VAL_V, VAL_A, DEVICE, batch_size=32)
         avg_r5 = (i2a[5] + a2i[5]) / 2
         
         print(f"Epoch {epoch+1} Results - Total Loss: {train_loss/len(train_loader):.4f}")
